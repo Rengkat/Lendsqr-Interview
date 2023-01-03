@@ -1,34 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.scss";
+import User from "./Components/UsersTable/User";
+import {
+  Dashboard,
+  DecisionModels,
+  Guarantors,
+  Karma,
+  Loan,
+  LoanRequest,
+  LoginPage,
+  MainDashboard,
+  Savings,
+  UserDetail,
+  Whitelist,
+} from "./Pages/Index";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/userDetail" element={<UserDetail />} />
+        <Route path="/guarantors" element={<Guarantors />} />
+        <Route path="/loan" element={<Loan />} />
+        <Route path="/decisionModel" element={<DecisionModels />} />
+        <Route path="/savings" element={<Savings />} />
+        <Route path="/loanRequest" element={<LoanRequest />} />
+        <Route path="/whitelist" element={<Whitelist />} />
+        <Route path="/karma" element={<Karma />} />
+        <Route path="/main-dashboard" element={<MainDashboard />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
