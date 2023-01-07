@@ -1,0 +1,73 @@
+// variables
+$primary: #39cdcc;
+$secondary: #213f7d;
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  .logo-container {
+    display: flex;
+    gap: 0.5em;
+    .logo {
+      width: 24.75px;
+      height: 25px;
+    }
+    .brand-name {
+      height: 30px;
+      width: 115px;
+    }
+  }
+  .search-input {
+    display: inline-flex;
+    border: solid gray 1px;
+    width: 400px;
+    margin-right: 4rem;
+    border-radius: 0px 6px 7px 0px;
+
+    input {
+      padding: 8px;
+      width: 344px;
+      border: none;
+    }
+    .icon {
+      display: flex;
+      width: calc(400px - 344px);
+      justify-content: center;
+      align-items: center;
+      color: #eee;
+      background-color: $primary;
+      //   border-left: 1px solid grey;
+    }
+  }
+  .profile {
+    display: flex;
+    gap: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    font-size: 1.25rem;
+    color: #213f7d;
+    .notification-icon {
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    .profile-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      .proImage {
+        width: 2.9rem;
+        height: 3rem;
+        border-radius: 100%;
+        object-fit: cover;
+      }
+      .drp-icon {
+        font-size: 1.8rem;
+        margin-left: -0.8rem;
+      }
+    }
+  }
+}
