@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
-import User from "./Components/UsersTable/User";
+
 import {
   DecisionModels,
   Guarantors,
@@ -26,17 +26,31 @@ import {
   Reference,
   FeesAndPricing,
   AuditLogs,
+  User,
   MainDashboard,
 } from "./Pages/Index";
-
+import {
+  AppAndSystem,
+  Document,
+  BankDetails,
+  Loans,
+  Saving,
+  GenteralDetails,
+} from "./Pages/Dashboard/UserDetails/index";
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          {/* <Route index element={<SharedLayout />} /> */}
           <Route path="user" element={<User />} />
-          <Route path="/userDetail" element={<UserDetail />} />
+          <Route path="/" element={<UserDetail />}>
+            <Route index element={<GenteralDetails />} />
+            <Route path="/document" element={<Document />} />
+            <Route path="/appAndSystem" element={<AppAndSystem />} />
+            <Route path="/bankDetails" element={<BankDetails />} />
+            <Route path="/loan" element={<Loan />} />
+            <Route path="/saving" element={<Saving />} />
+          </Route>
           <Route path="/guarantors" element={<Guarantors />} />
           <Route path="/loan" element={<Loan />} />
           <Route path="/decisionModel" element={<DecisionModels />} />
@@ -56,7 +70,7 @@ function App() {
           <Route path="/preferences" element={<Reference />} />
           <Route path="/feesAndPricing" element={<FeesAndPricing />} />
           <Route path="/auditLogs" element={<AuditLogs />} />
-          <Route path="/dashboard" element={<MainDashboard />} />
+          <Route index element={<MainDashboard />} />
         </Route>
         <Route path="login" element={<LoginPage />} />
         <Route path="*" element={<Error />} />

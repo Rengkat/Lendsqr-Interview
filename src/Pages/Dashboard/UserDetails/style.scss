@@ -1,0 +1,37 @@
+.detail-container {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  .arrow {
+    margin: 4rem 5rem 2rem 5rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #545f7d;
+    gap: 1rem;
+  }
+  .sub {
+    padding: 0rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .btns {
+      display: flex;
+      gap: 1rem;
+      button {
+        padding: 7px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .blk-btn {
+        color: red;
+        border: red 1px solid;
+        font-weight: bold;
+      }
+      .act-btn {
+        color: #39cdcc;
+        border: 1px #39cdcc solid;
+        font-weight: bold;
+      }
+    }
+  }
+}

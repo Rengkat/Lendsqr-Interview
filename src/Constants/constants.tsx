@@ -3,10 +3,18 @@ import {
   FaUserFriends,
   FaRegHandshake,
   MdMonetizationOn,
-  BsPiggyBankFill,
+  FaPiggyBank,
   FaHandHoldingUsd,
   FaUserCheck,
   FaUserTimes,
+  FaBriefcase,
+  BsBank,
+  GrStorage,
+  GrTransaction,
+  GrServices,
+  FaUserCog,
+  RiFilePaper2Line,
+  FaChartBar,
 } from "react-icons/all";
 type NavLinksType = {
   name: string;
@@ -37,7 +45,7 @@ export const navLinksCustomers: NavLinksType[] = [
   {
     name: "Savings",
     link: "/savings",
-    icon: <BsPiggyBankFill />,
+    icon: <FaPiggyBank />,
   },
   {
     name: "Loan Request",
@@ -60,47 +68,47 @@ export const navLinksBusinesses: NavLinksType[] = [
   {
     name: "Organization",
     link: "/organization",
-    icon: "",
+    icon: <FaBriefcase />,
   },
   {
     name: "Loan Products",
     link: "/loanProducts",
-    icon: "",
+    icon: <FaHandHoldingUsd />,
   },
   {
     name: "Savings Products",
     link: "/savingProducts",
-    icon: "",
+    icon: <BsBank />,
   },
   {
     name: "Fees and Charges",
     link: "/feesAndCharges",
-    icon: "",
+    icon: <GrStorage />,
   },
   {
     name: "Transactions",
     link: "/transactions",
-    icon: "",
+    icon: <GrTransaction />,
   },
   {
     name: "Services",
     link: "/services",
-    icon: "",
+    icon: <GrServices />,
   },
   {
     name: "Service Account",
     link: "/servicesAccount",
-    icon: "",
+    icon: <FaUserCog />,
   },
   {
     name: "Settlement",
     link: "/settlement",
-    icon: "",
+    icon: <RiFilePaper2Line />,
   },
   {
     name: "Reports",
     link: "/reports",
-    icon: "",
+    icon: <FaChartBar />,
   },
 ];
 export const navLinksSetting: NavLinksType[] = [

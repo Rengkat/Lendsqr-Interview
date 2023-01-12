@@ -1,10 +1,39 @@
 .side-bar {
-  width: 283px;
+  // width: 300px;
+  // position: fixed;
+  // left: 0;
+  // bottom: 0;
+  // top: 30%;
+  background-color: white;
   font-family: Arial, Helvetica, sans-serif;
   .side-bar-container {
+    font-size: 16px;
+    padding: 2rem 0rem;
     .Heading {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       text-transform: capitalize;
+      padding: 1rem 3rem;
+      color: gray;
+    }
+    .nav {
+      text-decoration: none;
+      display: flex;
+      gap: 0.8rem;
+      font-size: 1.2rem;
+      padding: 1rem 0rem 1rem 3rem;
+      color: gray;
+    }
+    .nav:hover {
+      transform: scale(1.02);
+      background-color: #e5ffff;
+      transition: all linear 100ms;
+    }
+    .nav.active {
+      color: #39cdcc;
+      border-left: #39cdcc 0.5rem solid;
+      background-color: #e5ffff;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
     }
   }
 }

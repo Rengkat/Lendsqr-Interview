@@ -4,7 +4,7 @@ import SideBar from "../../Components/SideBar/SideBar";
 
 const SharedLayout = () => {
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", backgroundColor: "#E5E5E5" }}>
       <div>
         <nav>
           <Nav />
@@ -13,12 +13,12 @@ const SharedLayout = () => {
           style={{
             display: "flex",
             alignContent: "center",
-            // alignItems: "center",
+            // gap: "5rem",
           }}>
-          <div style={{ padding: "1rem 5rem" }}>
+          <div style={{ width: "20%" }}>
             <SideBar />
           </div>
-          <div className="otherComponents">
+          <div style={{ width: "80%" }}>
             <Outlet />
           </div>
         </main>

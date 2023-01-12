@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./style.scss";
+import { FaHome } from "react-icons/all";
 import {
   navLinksBusinesses,
   navLinksCustomers,
@@ -11,7 +12,10 @@ const SideBar = () => {
     <div className="side-bar">
       <div className="side-bar-container">
         <div>
-          <NavLink to="/dashboard">
+          <NavLink className="nav" to="/dashboard">
+            <span>
+              <FaHome />
+            </span>
             <div>Dashboard</div>
           </NavLink>
         </div>
@@ -20,7 +24,7 @@ const SideBar = () => {
         </div>
         {navLinksCustomers.map((navLink) => {
           return (
-            <NavLink key={navLink.name} to={navLink.link}>
+            <NavLink className="nav" key={navLink.name} to={navLink.link}>
               <span>{navLink.icon}</span>
               <div>{navLink.name}</div>
             </NavLink>
@@ -33,7 +37,8 @@ const SideBar = () => {
         </div>
         {navLinksBusinesses.map((navLink) => {
           return (
-            <NavLink key={navLink.name} to={navLink.link}>
+            <NavLink className="nav" key={navLink.name} to={navLink.link}>
+              <span>{navLink.icon}</span>
               <div>{navLink.name}</div>
             </NavLink>
           );
@@ -44,7 +49,7 @@ const SideBar = () => {
         </div>
         {navLinksSetting.map((navLink) => {
           return (
-            <NavLink key={navLink.name} to={navLink.link}>
+            <NavLink className="nav" key={navLink.name} to={navLink.link}>
               <div>{navLink.name}</div>
             </NavLink>
           );

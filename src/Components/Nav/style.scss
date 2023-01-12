@@ -3,11 +3,12 @@ $primary: #39cdcc;
 $secondary: #213f7d;
 
 .nav-container {
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  padding: 1rem 5rem;
+  padding: 1rem 3rem;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   .logo-container {
     display: flex;
