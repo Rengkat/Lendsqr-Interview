@@ -1,25 +1,29 @@
-import {
-  GrDocumentStore,
-  GrStorage,
-  FaUserFriends,
-  FaUsers,
-} from "react-icons/all";
+import { userInfo } from "../../Constants/constants";
 import "./stylle.scss";
 
-const me: number[] = [1, 4, 5, 3];
 const UserSummary = () => {
   return (
     <div className="User-container">
       <h1>Users</h1>
+
       <div className="flex">
-        {me.map((detail) => {
+        {userInfo.map((detail) => {
           return (
-            <div className="box" key={detail}>
-              <div className="icon">
-                <FaUsers />
+            <div className="box" key={detail.heading}>
+              <div
+                className={`icon ${
+                  detail.heading === "Users"
+                    ? "users"
+                    : detail.heading === "Active Users"
+                    ? "activeUser"
+                    : detail.heading === "Users with Loans"
+                    ? "userWithLoan"
+                    : "userWithSavings"
+                }`}>
+                {detail.icon}
               </div>
-              <p>Users</p>
-              <h1>2,345</h1>
+              <p>{detail.heading}</p>
+              <h1>{detail.numbers}</h1>
             </div>
           );
         })}

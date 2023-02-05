@@ -1,5 +1,5 @@
 .User-container {
-  padding: 6rem 5rem 3rem 5rem;
+  padding: 3rem 5rem 3rem 5rem;
   color: #213f7d;
   font-family: Arial, Helvetica, sans-serif;
   .flex {
@@ -23,8 +23,22 @@
         border-radius: 100%;
         width: 40px;
         height: 40px;
+      }
+      .users {
+        background: #e018ff56;
         color: #df18ff;
-        background-color: #e19eeb;
+      }
+      .activeUser {
+        color: #5718ff;
+        background: #5618ff60;
+      }
+      .userWithLoan {
+        background: #f55f4452;
+        color: #f55f44;
+      }
+      .userWithSavings {
+        background: #ff33664b;
+        color: #ff3366;
       }
     }
   }

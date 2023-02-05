@@ -1,91 +1,23 @@
-import { TbMathSymbols, CgSortAz, BsThreeDotsVertical } from "react-icons/all";
+import {
+  TbMathSymbols,
+  CgSortAz,
+  BsThreeDotsVertical,
+  HiHand,
+} from "react-icons/all";
+import { useState } from "react";
 import Form from "../Form/Form";
 import SelectBtn from "../SelectBtn/SelectBtn";
 import { useNavigate } from "react-router-dom";
+import { UserTableDataType } from "../../Constants/UserTypes";
 import "./style.scss";
-interface DataType {
-  organization: string;
-  username: string;
-  email: string;
-  phone: string;
-  date: string;
-  status: string;
+
+interface TableProps {
+  data: UserTableDataType | undefined;
+  isFetching: any;
 }
-const datas: DataType[] = [
-  {
-    organization: "The Catalyst",
-    username: "theCatalyst",
-    email: "thecatalyst@gmail.com",
-    phone: "0806758117",
-    date: "May 4, 2022 10AM",
-    status: "active",
-  },
-  {
-    organization: "The Catalyst",
-    username: "theCatalyst",
-    email: "thecatalyst@gmail.com",
-    phone: "0806758117",
-    date: "May 4, 2022 10AM",
-    status: "pending",
-  },
-  {
-    organization: "The Catalyst",
-    username: "theCatalyst",
-    email: "thecatalyst@gmail.com",
-    phone: "0806758117",
-    date: "May 4, 2022 10AM",
-    status: "blacklisted",
-  },
-  {
-    organization: "The Catalyst",
-    username: "theCatalyst",
-    email: "thecatalyst@gmail.com",
-    phone: "0806758117",
-    date: "May 4, 2022 10AM",
-    status: "inactive",
-  },
-  {
-    organization: "The Catalyst",
-    username: "theCatalyst",
-    email: "thecatalyst@gmail.com",
-    phone: "0806758117",
-    date: "May 4, 2022 10AM",
-    status: "active",
-  },
-  {
-    organization: "The Catalyst",
-    username: "theCatalyst",
-    email: "thecatalyst@gmail.com",
-    phone: "0806758117",
-    date: "May 4, 2022 10AM",
-    status: "blacklisted",
-  },
-  {
-    organization: "The Catalyst",
-    username: "theCatalyst",
-    email: "thecatalyst@gmail.com",
-    phone: "0806758117",
-    date: "May 4, 2022 10AM",
-    status: "active",
-  },
-  {
-    organization: "The Catalyst",
-    username: "theCatalyst",
-    email: "thecatalyst@gmail.com",
-    phone: "0806758117",
-    date: "May 4, 2022 10AM",
-    status: "pending",
-  },
-  {
-    organization: "The Catalyst",
-    username: "theCatalyst",
-    email: "thecatalyst@gmail.com",
-    phone: "0806758117",
-    date: "May 4, 2022 10AM",
-    status: "inactive",
-  },
-];
-const UserTable = () => {
+
+const UserTable = ({ data, isFetching }: TableProps) => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const navigate = useNavigate();
   return (
     <div className="table-container">
@@ -96,7 +28,11 @@ const UserTable = () => {
               <div className="td">
                 <span>organization</span>
                 <span>
-                  <CgSortAz fontSize={25} style={{ cursor: "pointer" }} />
+                  <CgSortAz
+                    onClick={() => setIsFormOpen((prev) => !prev)}
+                    fontSize={25}
+                    style={{ cursor: "pointer" }}
+                  />
                 </span>
               </div>
             </td>
@@ -144,44 +80,59 @@ const UserTable = () => {
           </tr>
         </thead>
         {/* ===== onclick disappear=== */}
-        {/* <Form /> */}
-
-        <tbody>
-          {/* <Form /> */}
-          {datas.map((data) => {
-            return (
-              <tr key={Math.random()}>
-                <td>{data.organization}</td>
-                <td>{data.username}</td>
-                <td>{data.phone}</td>
-                <td>{data.email}</td>
-                <td>{data.date}</td>
-                <td>
-                  <p
-                    className={
-                      data.status === "active"
-                        ? "active"
-                        : data.status === "inactive"
-                        ? "inactive"
-                        : data.status === "pending"
-                        ? "pending"
-                        : "blacklist"
-                    }>
-                    {data.status}
-                  </p>
-                </td>
-                <td style={{ position: "relative" }}>
-                  <BsThreeDotsVertical
-                    onClick={() => navigate("/userDetails")}
-                    fontSize={20}
-                    style={{ cursor: "pointer" }}
-                  />
-                  {/* <SelectBtn /> */}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
+        {isFormOpen && <Form />}
+        {isFetching ? (
+          <div
+            style={{
+              width: "100rem",
+              margin: "auto",
+              height: "10vh",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}>
+            <h1>Loading...</h1>
+          </div>
+        ) : (
+          <>
+            <tbody>
+              {data?.map((data) => {
+                // console.log(data);
+                return (
+                  <tr key={Math.random()}>
+                    <td>{data.orgName}</td>
+                    <td>{data.userName}</td>
+                    <td>{data.email.slice(0, 12)}</td>
+                    <td>{data.phoneNumber.slice(0, 13)}</td>
+                    <td>{new Date(data.createdAt).toDateString()}</td>
+                    <td>
+                      <p
+                        className={
+                          data.status === "active"
+                            ? "active"
+                            : data.status === "inactive"
+                            ? "inactive"
+                            : data.status === "pending"
+                            ? "pending"
+                            : "blacklist"
+                        }>
+                        {data.status}
+                      </p>
+                    </td>
+                    <td style={{ position: "relative" }}>
+                      <BsThreeDotsVertical
+                        onClick={() => navigate(`/${data.id}`)}
+                        fontSize={20}
+                        style={{ cursor: "pointer" }}
+                      />
+                      {/* <SelectBtn /> */}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </>
+        )}
       </table>
     </div>
   );

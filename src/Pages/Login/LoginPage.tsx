@@ -1,23 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import "./Style.scss";
 import logo from "../../assets/Union.png";
 import banner from "../../assets/lendsqr.png";
 import welcomImage from "../../assets/pablo-sign-in 1.png";
+import { useSelector, useDispatch } from "react-redux";
+import { updateUser } from "../../Redux/Features/LoginSlice";
+
 // === Form input field types ===
-type InitialSateType = {
-  name: string;
-  password: string;
-};
+
 const LoginPage = () => {
-  const initialState: InitialSateType = {
-    name: "",
-    password: "",
+  const dispatch = useDispatch();
+
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    if (password && email) {
+      dispatch(updateUser({ email, password }));
+      navigate("/");
+    } else {
+      return;
+    }
+
+    setEmail("");
+    setPassword("");
   };
-  const [loginDetail, setLoginDetails] = useState<InitialSateType | undefined>(
-    initialState
-  );
   return (
     <div className="login-page">
       <div className="container">
@@ -39,14 +49,26 @@ const LoginPage = () => {
               <h1>Welcome!</h1>
               <p>Enter details to login.</p>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
               {/* ==input == */}
-              <input type="text" placeholder="Email" />
-              <input type="text" placeholder="Password" />
+              <input
+                type="email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                placeholder="email"
+              />
+              <input
+                type="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                placeholder="Password"
+              />
               <p>Forgot password?</p>
-              <Link to="/" className="login-btn">
-                <button>LOG IN</button>
-              </Link>
+              <div className="login-btn">
+                <button type="submit">LOG IN</button>
+              </div>
             </form>
           </div>
         </div>

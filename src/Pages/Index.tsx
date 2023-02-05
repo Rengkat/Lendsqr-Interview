@@ -1,5 +1,5 @@
 export { default as User } from "./Dashboard/User/User";
-export { default as UserDetail } from "./Dashboard/UserDetails/UserDetail";
+export { default as UserDetailLayOut } from "./Dashboard/UserDetails/UserDetail";
 export { default as AuditLogs } from "./Dashboard/AuditLogs/AuditLogs";
 export { default as SharedLayout } from "../Pages/Dashboard/Dashboard";
 export { default as DecisionModels } from "./Dashboard/DecisionModels/DecisionModels";
@@ -23,3 +23,4 @@ export { default as Whitelist } from "./Dashboard/Whitelist/Whitelist";
 export { default as Report } from "./Dashboard/Report/Report";
 export { default as MainDashboard } from "./Dashboard/MainDashboard/MainDashboard";
 export { default as Error } from "../Pages/Error/Error";
+export { default as ProtectedRoute } from "../Components/ProtectedRoute";

@@ -15,6 +15,9 @@ import {
   FaUserCog,
   RiFilePaper2Line,
   FaChartBar,
+  FiUsers,
+  GrDocumentStore,
+  FaCoins,
 } from "react-icons/all";
 type NavLinksType = {
   name: string;
@@ -24,42 +27,42 @@ type NavLinksType = {
 export const navLinksCustomers: NavLinksType[] = [
   {
     name: "User",
-    link: "/user",
+    link: "user",
     icon: <FaUserFriends />,
   },
   {
     name: "Guarantors",
-    link: "/guarantors",
+    link: "guarantors",
     icon: <FaUsers />,
   },
   {
     name: "Loan",
-    link: "/loan",
+    link: "loan",
     icon: <MdMonetizationOn />,
   },
   {
     name: "Decision Model",
-    link: "/decisionModel",
+    link: "decisionModel",
     icon: <FaRegHandshake />,
   },
   {
     name: "Savings",
-    link: "/savings",
+    link: "savings",
     icon: <FaPiggyBank />,
   },
   {
     name: "Loan Request",
-    link: "/loanRequest",
+    link: "loanRequest",
     icon: <FaHandHoldingUsd />,
   },
   {
     name: "Wishlist",
-    link: "/wishlist",
+    link: "wishlist",
     icon: <FaUserCheck />,
   },
   {
     name: "Karma",
-    link: "/karma",
+    link: "karma",
     icon: <FaUserTimes />,
   },
 ];
@@ -128,3 +131,80 @@ export const navLinksSetting: NavLinksType[] = [
     icon: "",
   },
 ];
+type UserInfor = {
+  icon: React.ReactNode;
+  heading: string;
+  numbers: string;
+};
+export const userInfo: UserInfor[] = [
+  {
+    icon: <FiUsers />,
+    heading: "Users",
+    numbers: "230,456",
+  },
+  {
+    icon: <FaUsers />,
+    heading: "Active Users",
+    numbers: "2,456",
+  },
+  {
+    icon: <GrDocumentStore />,
+    heading: "Users with Loans",
+    numbers: "12,456",
+  },
+  {
+    icon: <FaCoins />,
+    heading: "Users with Savings",
+    numbers: "102,456",
+  },
+];
+export interface IndividualType {
+  createdAt: string;
+  orgName: string;
+  userName: string;
+  email: string;
+  phoneNumber: string;
+  lastActiveDate: string;
+  profile: Profile;
+  guarantor: Guarantor;
+  accountBalance: string;
+  accountNumber: string;
+  socials: Socials;
+  education: Education;
+  id: string;
+}
+
+export interface Profile {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  avatar: string;
+  gender: string;
+  bvn: string;
+  address: string;
+  currency: string;
+}
+
+export interface Guarantor {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  gender: string;
+  address: string;
+}
+
+export interface Socials {
+  facebook: string;
+  instagram: string;
+  twitter: string;
+}
+
+export interface Education {
+  level: string;
+  employmentStatus: string;
+  sector: string;
+  duration: string;
+  officeEmail: string;
+  monthlyIncome: string[];
+  loanRepayment: string;
+}
