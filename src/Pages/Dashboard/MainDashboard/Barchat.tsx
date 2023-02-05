@@ -8,7 +8,8 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-import { useGetUsersQuery } from "../../../Redux/Api/UserApi";
+
+import { UserTableDataType } from "../../../Constants/UserTypes";
 
 const data = [
   {
@@ -54,9 +55,10 @@ const data = [
     amt: 2100,
   },
 ];
+interface BarDataType {
+  data: UserTableDataType | undefined;
+}
 const Barchat = () => {
-  // const { data, isFetching } = useGetUsersQuery(undefined);
-  // console.log(data);
   return (
     <>
       <BarChart

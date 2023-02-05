@@ -1,15 +1,15 @@
 import React from "react";
 import UserSummary from "../../../Components/UserSummary/UserSummary";
-import { removeUserFromLocalStorage } from "../../../Redux/Features/localStorage";
 import Barchat from "./Barchat";
 import PieCharts from "./PieChart";
 import SpiderChart from "./SpiderChart";
 import Spread from "./Spread";
+import { useGetUsersQuery } from "../../../Redux/Api/UserApi";
 
 const MainDashboard = () => {
-  const handleClick = () => {
-    removeUserFromLocalStorage();
-  };
+  const { data, isFetching } = useGetUsersQuery(undefined);
+  const tenCustomer = data?.slice(0, 10);
+
   return (
     <div>
       <UserSummary />

@@ -7,7 +7,15 @@ import {
   MdArrowDropDown,
   IoMdNotificationsOutline,
 } from "react-icons/all";
+import { useState } from "react";
+import { removeUserFromLocalStorage } from "../../Redux/Features/localStorage";
+
 function Nav() {
+  const [isdrop, setIsDrop] = useState(false);
+  const handleClick = () => {
+    removeUserFromLocalStorage();
+    window.location.reload();
+  };
   return (
     <nav>
       <div className="nav-container">
@@ -29,11 +37,18 @@ function Nav() {
           <div className="notification-icon">
             <IoMdNotificationsOutline />
           </div>
-          <div className="profile-detail">
+          <div
+            className="profile-detail"
+            onClick={(e) => setIsDrop((pre) => !pre)}>
             <img className="proImage" src={profileImage} alt="" />
             <p>Alexander</p>
             <MdArrowDropDown className="drp-icon" />
           </div>
+          {isdrop ? (
+            <div onClick={handleClick} className="dropdown">
+              <h4>Logout</h4>
+            </div>
+          ) : null}
         </div>
       </div>
     </nav>

@@ -67,7 +67,7 @@ export interface UserTableData {
   socials: Socials;
   education: Education;
   id: string;
-  status: string;
+  // status: string;
 }
 
 export interface Profile {

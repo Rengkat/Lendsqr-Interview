@@ -51,6 +51,7 @@ $secondary: #213f7d;
     align-items: center;
     font-size: 1.25rem;
     color: #213f7d;
+    position: relative;
     .notification-icon {
       font-size: 1.8rem;
       cursor: pointer;
@@ -59,6 +60,8 @@ $secondary: #213f7d;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      cursor: pointer;
+
       .proImage {
         width: 2.9rem;
         height: 3rem;
@@ -69,6 +72,19 @@ $secondary: #213f7d;
         font-size: 1.8rem;
         margin-left: -0.8rem;
       }
+    }
+    .dropdown {
+      position: absolute;
+      top: 80%;
+      right: 0;
+      margin-right: 0.5rem;
+      margin-top: 0.5rem;
+      width: 7rem;
+      padding: 5px;
+      display: flex;
+      background-color: $primary;
+      justify-content: center;
+      cursor: pointer;
     }
   }
 }
