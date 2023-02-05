@@ -1,15 +1,15 @@
+import { useSelector } from "react-redux";
 import {
   BarChart,
   Bar,
   Legend,
-  AreaChart,
-  Area,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
 } from "recharts";
+import { useGetUsersQuery } from "../../../Redux/Api/UserApi";
+
 const data = [
   {
     name: "Page A",
@@ -55,6 +55,8 @@ const data = [
   },
 ];
 const Barchat = () => {
+  // const { data, isFetching } = useGetUsersQuery(undefined);
+  // console.log(data);
   return (
     <>
       <BarChart

@@ -32,7 +32,7 @@ const SideBar = () => {
         })}
 
         {/* === Bussiness== */}
-        <div className="Heading">
+        {/* <div className="Heading">
           <h5>Businesses</h5>
         </div>
         {navLinksBusinesses.map((navLink) => {
@@ -42,9 +42,9 @@ const SideBar = () => {
               <div>{navLink.name}</div>
             </NavLink>
           );
-        })}
+        })} */}
         {/* ===setting=== */}
-        <div className="Heading">
+        {/* <div className="Heading">
           <h5>Settings</h5>
         </div>
         {navLinksSetting.map((navLink) => {
@@ -53,7 +53,7 @@ const SideBar = () => {
               <div>{navLink.name}</div>
             </NavLink>
           );
-        })}
+        })} */}
       </div>
     </div>
   );
