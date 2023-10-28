@@ -6,10 +6,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToUsers } from "../../../Redux/Features/LoginSlice";
 
-import {
-  MdOutlineNavigateNext,
-  MdOutlineNavigateBefore,
-} from "react-icons/all";
+import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/all";
 
 const User = () => {
   const { data, isFetching } = useGetUsersQuery(undefined);
@@ -37,26 +34,10 @@ const User = () => {
   const currentData = users?.slice(startIndex, endIndex);
 
   return (
-    <div>
+    <div className="userContainer">
       <UserSummary />
       <UserTable data={currentData} isFetching={isFetching} />
       <div className="table-nav">
-        {/* <div className="select-page-num">
-          <label>Showing</label>
-          <select name="" id="" className="select">
-            <option value="">10</option>
-            <option value="">20</option>
-            <option value="">30</option>
-            <option value="">40</option>
-            <option value="">50</option>
-            <option value="">60</option>
-            <option value="">70</option>
-            <option value="">80</option>
-            <option value="">90</option>
-            <option value="">100</option>
-          </select>
-          <label htmlFor="">out of 100</label>
-        </div> */}
         {!isFetching ? (
           <div className="pagination">
             <button

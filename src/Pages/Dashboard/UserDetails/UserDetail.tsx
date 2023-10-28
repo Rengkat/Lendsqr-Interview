@@ -26,9 +26,7 @@ const UserDetailLayOut = () => {
       <div className="sub">
         <h1>User Details</h1>
         <div className="btns">
-          <button
-            className="blk-btn"
-            onClick={(e) => handleBlacklist(data?.id)}>
+          <button className="blk-btn" onClick={(e) => handleBlacklist(data?.id)}>
             BLACKLIST
           </button>
           <button className="act-btn">ACTIVE USER</button>
@@ -71,10 +69,6 @@ const UserDetailLayOut = () => {
 
           <NavLink className="link" to="bankDetails">
             Bank Details
-          </NavLink>
-
-          <NavLink className="link" to="loan">
-            Loans
           </NavLink>
 
           <NavLink className="link" to="saving">

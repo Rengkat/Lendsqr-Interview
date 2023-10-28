@@ -14,46 +14,83 @@ import {
 
 const data = [
   {
-    name: "Page A",
+    name: "January",
     uv: 590,
     pv: 800,
     amt: 1400,
   },
   {
-    name: "Page B",
+    name: "February",
     uv: 868,
     pv: 967,
     amt: 1506,
   },
   {
-    name: "Page C",
+    name: "March",
     uv: 1397,
     pv: 1098,
     amt: 989,
   },
   {
-    name: "Page D",
+    name: "April",
     uv: 1480,
     pv: 1200,
-    amt: 1228,
+    amt: 128,
   },
   {
-    name: "Page E",
+    name: "May",
     uv: 1520,
     pv: 1108,
-    amt: 1100,
+    amt: 100,
   },
   {
-    name: "Page F",
+    name: "Jun",
     uv: 1400,
     pv: 680,
+    amt: 1700,
+  },
+  {
+    name: "Jul",
+    uv: 1397,
+    pv: 1098,
+    amt: 989,
+  },
+  {
+    name: "Aug",
+    uv: 1400,
+    pv: 680,
+    amt: 1700,
+  },
+  {
+    name: "Sept",
+    uv: 590,
+    pv: 800,
+    amt: 1400,
+  },
+  {
+    name: "Oct",
+    uv: 1400,
+    pv: 7080,
+    amt: 3800,
+  },
+  {
+    name: "Nov",
+    uv: 1700,
+    pv: 6800,
+    amt: 2700,
+  },
+  {
+    name: "Dec",
+    uv: 1400,
+    pv: 780,
     amt: 1700,
   },
 ];
 
 const Spread = () => {
   return (
-    <div style={{ width: "95%", height: 400, padding: "5px" }}>
+    // <div style={{ width: "100%" }}>
+    <div style={{ width: "95%", height: 400, padding: "2PZ" }}>
       <ResponsiveContainer>
         <ComposedChart
           width={500}
@@ -76,6 +113,7 @@ const Spread = () => {
         </ComposedChart>
       </ResponsiveContainer>
     </div>
+    // </div>
   );
 };
 

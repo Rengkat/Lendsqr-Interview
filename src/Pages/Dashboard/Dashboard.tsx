@@ -1,39 +1,32 @@
 import { Outlet } from "react-router-dom";
 import Nav from "../../Components/Nav/Nav";
 import SideBar from "../../Components/SideBar/SideBar";
-
+import "./style.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { openSideBar } from "../../Redux/Features/LoginSlice";
 const SharedLayout = () => {
+  const { isSideBarOpen } = useSelector((store: any) => store.user);
+  const dispatch = useDispatch();
   return (
-    <div
-      style={{
-        width: "100%",
-        backgroundColor: "#E5E5E5",
-        position: "relative",
-      }}>
-      <div>
-        <nav style={{ position: "sticky", inset: 0, zIndex: 110 }}>
+    <div className="container">
+      <div className="contain">
+        <nav>
           <Nav />
         </nav>
-        <main
-          style={{
-            display: "flex",
-            alignContent: "center",
-            position: "relative",
-            // gap: "5rem",
-          }}>
+        <main>
           <div
-            style={{
-              width: "20%",
-              position: "fixed",
-              zIndex: 100,
-            }}>
-            <SideBar />
+            onClick={() => dispatch(openSideBar())}
+            className={`${isSideBarOpen ? "sidebar-in" : "sidebar-out"} overlay`}>
+            <aside className="sidebar">
+              <SideBar />
+            </aside>
           </div>
-          <div
-            style={{
-              width: "80%",
-              marginLeft: "18rem",
-            }}>
+          <div style={{ background: "blue" }}>
+            <div className="large-screen">
+              <SideBar />
+            </div>
+          </div>
+          <div className="mainContain">
             <Outlet />
           </div>
         </main>

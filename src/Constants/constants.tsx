@@ -31,38 +31,29 @@ export const navLinksCustomers: NavLinksType[] = [
     icon: <FaUserFriends />,
   },
   {
-    name: "Guarantors",
-    link: "guarantors",
+    name: "Stylists",
+    link: "stylist",
     icon: <FaUsers />,
   },
   {
-    name: "Loan",
-    link: "loan",
+    name: "Orders",
+    link: "orders",
     icon: <MdMonetizationOn />,
   },
   {
-    name: "Decision Model",
-    link: "decisionModel",
-    icon: <FaRegHandshake />,
-  },
-  {
-    name: "Savings",
-    link: "savings",
+    name: "Products",
+    link: "products",
     icon: <FaPiggyBank />,
   },
-  {
-    name: "Loan Request",
-    link: "loanRequest",
-    icon: <FaHandHoldingUsd />,
-  },
+
   {
     name: "Wishlist",
     link: "wishlist",
     icon: <FaUserCheck />,
   },
   {
-    name: "Karma",
-    link: "karma",
+    name: "Cancel Orders",
+    link: "cancel",
     icon: <FaUserTimes />,
   },
 ];
@@ -114,23 +105,7 @@ export const navLinksBusinesses: NavLinksType[] = [
     icon: <FaChartBar />,
   },
 ];
-export const navLinksSetting: NavLinksType[] = [
-  {
-    name: "Preferences",
-    link: "/preferences",
-    icon: "",
-  },
-  {
-    name: "Fees and Pricing",
-    link: "/feesAndPricing",
-    icon: "",
-  },
-  {
-    name: "Audit Logs",
-    link: "/auditLogs",
-    icon: "",
-  },
-];
+
 type UserInfor = {
   icon: React.ReactNode;
   heading: string;

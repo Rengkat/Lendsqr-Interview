@@ -6,11 +6,13 @@ import { useGetUsersQuery } from "../Api/UserApi";
 interface InitialStateType {
   userLogin: { email: string; password: string };
   users: Root2[] | undefined;
+  isSideBarOpen: boolean;
 }
 
 const initialState: InitialStateType = {
   userLogin: getUserFromLocalStorage(),
   users: [],
+  isSideBarOpen: false,
 };
 
 const loginSlice = createSlice({
@@ -25,14 +27,14 @@ const loginSlice = createSlice({
       state.users = action.payload;
     },
     updateStatus(state, action) {
-      // let targetUser = state.users?.find((user) => user.id === action.payload);
-      // if (targetUser) {
-      // }
       state.users = state.users?.map((user) =>
         user.id === action.payload ? { ...user, status: "blacklist" } : user
       );
     },
+    openSideBar(state) {
+      state.isSideBarOpen = !state.isSideBarOpen;
+    },
   },
 });
 export default loginSlice.reducer;
-export const { updateUser, addToUsers, updateStatus } = loginSlice.actions;
+export const { updateUser, addToUsers, updateStatus, openSideBar } = loginSlice.actions;

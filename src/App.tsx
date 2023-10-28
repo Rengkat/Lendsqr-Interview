@@ -6,7 +6,6 @@ import {
   DecisionModels,
   Guarantors,
   Karma,
-  Loan,
   LoanRequest,
   LoginPage,
   Savings,
@@ -14,18 +13,6 @@ import {
   Whitelist,
   Error,
   SharedLayout,
-  Organization,
-  LoanProducts,
-  SavingsProduct,
-  FeesAndCharges,
-  Tansactions,
-  Services,
-  ServiceAccount,
-  Settlement,
-  Report,
-  Reference,
-  FeesAndPricing,
-  AuditLogs,
   User,
   MainDashboard,
   ProtectedRoute,
@@ -34,7 +21,6 @@ import {
   AppAndSystem,
   Document,
   BankDetails,
-  Loans,
   Saving,
   GenteralDetails,
 } from "./Pages/Dashboard/UserDetails/index";
@@ -64,28 +50,15 @@ function App() {
             <Route path="document" element={<Document />} />
             <Route path="appAndSystem" element={<AppAndSystem />} />
             <Route path="bankDetails" element={<BankDetails />} />
-            <Route path="loan" element={<Loan />} />
             <Route path="saving" element={<Saving />} />
           </Route>
-          <Route path="guarantors" element={<Guarantors />} />
-          <Route path="loan" element={<Loan />} />
-          <Route path="decisionModel" element={<DecisionModels />} />
-          <Route path="savings" element={<Savings />} />
+          <Route path="stylists" element={<Guarantors />} />
+          <Route path="orders" element={<DecisionModels />} />
+          <Route path="products" element={<Savings />} />
           <Route path="loanRequest" element={<LoanRequest />} />
           <Route path="wishlist" element={<Whitelist />} />
-          <Route path="karma" element={<Karma />} />
-          <Route path="organization" element={<Organization />} />
-          <Route path="loanProducts" element={<LoanProducts />} />
-          <Route path="savingProducts" element={<SavingsProduct />} />
-          <Route path="feesAndCharges" element={<FeesAndCharges />} />
-          <Route path="transactions" element={<Tansactions />} />
-          <Route path="services" element={<Services />} />
-          <Route path="servicesAccount" element={<ServiceAccount />} />
-          <Route path="settlement" element={<Settlement />} />
-          <Route path="reports" element={<Report />} />
-          <Route path="preferences" element={<Reference />} />
-          <Route path="feesAndPricing" element={<FeesAndPricing />} />
-          <Route path="auditLogs" element={<AuditLogs />} />
+          <Route path="cancel" element={<Karma />} />
+
           {/* </ProtectedRoute> */}
         </Route>
       </Routes>

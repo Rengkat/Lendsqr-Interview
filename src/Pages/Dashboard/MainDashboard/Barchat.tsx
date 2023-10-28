@@ -1,16 +1,8 @@
 import { useSelector } from "react-redux";
-import {
-  BarChart,
-  Bar,
-  Legend,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-} from "recharts";
-
+import { BarChart, Bar, Legend, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
+import "./Style.scss";
 import { UserTableDataType } from "../../../Constants/UserTypes";
-
+import { useEffect, useState } from "react";
 const data = [
   {
     name: "Page A",
@@ -54,6 +46,12 @@ const data = [
     pv: 4300,
     amt: 2100,
   },
+  {
+    name: "Page G",
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
 ];
 interface BarDataType {
   data: UserTableDataType | undefined;
@@ -61,29 +59,34 @@ interface BarDataType {
 const Barchat = () => {
   return (
     <>
-      <BarChart
-        style={{
-          background: "white",
-          borderRadius: "10px",
-        }}
-        width={700}
-        height={300}
-        data={data}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
-        <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
-        <Tooltip />
-        <Legend />
-        <Bar yAxisId="left" dataKey="pv" fill="#8884d8" />
-        <Bar yAxisId="right" dataKey="uv" fill="#82ca9d" />
-      </BarChart>
+      <div>
+        <BarChart
+          style={{
+            background: "white",
+            borderRadius: "10px",
+          }}
+          width={800}
+          height={300}
+          data={data}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
+          <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
+          <Tooltip />
+          <Legend />
+          <Bar yAxisId="left" dataKey="pv" fill="#8884d8" />
+          <Bar yAxisId="right" dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+        <div className="bar-chart">
+          <h1>SALES</h1>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,0 +1,55 @@
+@mixin mobile {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin large {
+  @media only screen and (min-width: 1441px) {
+    @content;
+  }
+}
+$primary: #39cdcc;
+$secondary: #213f7d;
+.containerDash {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem;
+  .top-charts {
+    background-color: #fff;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    @include mobile() {
+      flex-direction: column;
+    }
+    @include tablet() {
+      flex-direction: column;
+    }
+    @include laptop() {
+      flex-direction: row;
+    }
+    .bar-chart {
+      font-size: 2rem;
+      font-weight: 700;
+      width: 100%;
+      display: grid;
+      place-content: center;
+      color: $secondary;
+    }
+  }
+  .pieCharts {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+  }
+}
