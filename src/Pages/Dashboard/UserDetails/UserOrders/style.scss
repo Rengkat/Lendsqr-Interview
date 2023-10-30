@@ -1,0 +1,66 @@
+@mixin mobile {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin large {
+  @media only screen and (min-width: 1441px) {
+    @content;
+  }
+}
+.title {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  text-transform: capitalize;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-bottom: 1px #eaeaea solid;
+  font-size: 0.8rem;
+}
+.tableBody {
+  :hover {
+    background-color: #f3f3f3;
+  }
+  .table-content {
+    width: 100%;
+    display: grid;
+    padding: 1rem 0 1rem 0.5rem;
+    grid-template-columns: repeat(6, 1fr);
+    text-transform: capitalize;
+    img {
+      width: 20%;
+    }
+    .name {
+      font-size: 0.5rem;
+      @include laptop() {
+        font-size: 0.8rem;
+      }
+      @include large() {
+        font-size: 0.8rem;
+      }
+    }
+    p {
+      padding-top: 0.3rem;
+      font-size: 0.7rem;
+    }
+    button {
+      background-color: #39cdcc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.7rem;
+      padding: 5px 9px;
+      cursor: pointer;
+    }
+  }
+}

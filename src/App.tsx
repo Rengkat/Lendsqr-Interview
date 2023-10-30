@@ -3,31 +3,25 @@ import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 
 import {
-  DecisionModels,
-  Guarantors,
-  Karma,
-  LoanRequest,
   LoginPage,
-  Savings,
   UserDetailLayOut,
-  Whitelist,
   Error,
   SharedLayout,
   User,
   MainDashboard,
   ProtectedRoute,
+  Orders,
+  Stylists,
+  Products,
+  CancelOrders,
 } from "./Pages/Index";
 import {
-  AppAndSystem,
-  Document,
-  BankDetails,
-  Saving,
   GenteralDetails,
+  UserOrders,
+  UserCart,
+  UserWishlist,
 } from "./Pages/Dashboard/UserDetails/index";
-// import { useData } from "./Pages/Dashboard/UserDetails/UserDetail";
 function App() {
-  // const { data }: any = useData();
-
   return (
     <div className="App">
       <Routes>
@@ -43,21 +37,18 @@ function App() {
           }>
           <Route index element={<MainDashboard />} />
           <Route path="dashboard" element={<MainDashboard />} />
-          <Route path="user" element={<User />} />
-          <Route path=":userID" element={<UserDetailLayOut />}>
+          <Route path="users" element={<User />} />
+          <Route path="stylist" element={<Stylists />} />
+          <Route path="users/:userId" element={<UserDetailLayOut />}>
             <Route index element={<GenteralDetails />} />
             <Route path="generalDetails" element={<GenteralDetails />} />
-            <Route path="document" element={<Document />} />
-            <Route path="appAndSystem" element={<AppAndSystem />} />
-            <Route path="bankDetails" element={<BankDetails />} />
-            <Route path="saving" element={<Saving />} />
+            <Route path="orders" element={<UserOrders />} />
+            <Route path="cart" element={<UserCart />} />
+            <Route path="wishlist" element={<UserWishlist />} />
           </Route>
-          <Route path="stylists" element={<Guarantors />} />
-          <Route path="orders" element={<DecisionModels />} />
-          <Route path="products" element={<Savings />} />
-          <Route path="loanRequest" element={<LoanRequest />} />
-          <Route path="wishlist" element={<Whitelist />} />
-          <Route path="cancel" element={<Karma />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="products" element={<Products />} />
+          <Route path="cancel" element={<CancelOrders />} />
 
           {/* </ProtectedRoute> */}
         </Route>

@@ -46,6 +46,11 @@
       box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
       border-radius: 4px;
       color: #213f7d;
+      transition: background-color 0.8s;
+      &:hover {
+        background-color: #39cdcd79;
+        cursor: pointer;
+      }
       .icon {
         display: flex;
         justify-content: center;

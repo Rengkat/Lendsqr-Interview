@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  Legend,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-} from "recharts";
+import { Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis } from "recharts";
 
 const data = [
   {
@@ -49,30 +42,12 @@ const data = [
 
 const SpiderChart = () => {
   return (
-    <RadarChart
-      cx={300}
-      cy={250}
-      outerRadius={150}
-      width={500}
-      height={500}
-      data={data}>
+    <RadarChart cx={300} cy={250} outerRadius={90} width={500} height={400} data={data}>
       <PolarGrid />
       <PolarAngleAxis dataKey="subject" />
       <PolarRadiusAxis angle={30} domain={[0, 150]} />
-      <Radar
-        name="Mike"
-        dataKey="A"
-        stroke="#8884d8"
-        fill="#8884d8"
-        fillOpacity={0.6}
-      />
-      <Radar
-        name="Lily"
-        dataKey="B"
-        stroke="#82ca9d"
-        fill="#82ca9d"
-        fillOpacity={0.6}
-      />
+      <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+      <Radar name="Lily" dataKey="B" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6} />
       <Legend />
     </RadarChart>
   );

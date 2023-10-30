@@ -17,11 +17,10 @@ const GenteralDetails = () => {
       <div className="personal-information">
         <h2 className="heading">Personal Information</h2>
         <DetailsComponent profile={data} />
-        <h2 className="heading">Education and Employment</h2>
-        <EducationDetail education={data} />
+
         <h2 className="heading">Socials</h2>
         <Social socials={data} />
-        <h2 className="heading">Guarantor</h2>
+        <h2 className="heading">Others</h2>
         <Gurantor gurantor={data} />
       </div>
     </div>

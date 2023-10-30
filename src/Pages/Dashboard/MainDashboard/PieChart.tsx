@@ -30,14 +30,7 @@ const PieCharts = () => {
       }}
       width={350}
       height={300}>
-      <Pie
-        data={data01}
-        dataKey="value"
-        cx={160}
-        cy={150}
-        outerRadius={50}
-        fill="#8884d8"
-      />
+      <Pie data={data01} dataKey="value" cx={160} cy={150} outerRadius={50} fill="#8884d8" />
       <Pie
         data={data02}
         dataKey="value"

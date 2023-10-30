@@ -6,18 +6,16 @@ const Gurantor = ({ gurantor }: GurantorProp) => {
   return (
     <div className="top-grid-education">
       <div className="full-name">
-        <p>full name</p>
-        <h3>
-          {gurantor?.guarantor?.lastName} {gurantor?.guarantor?.firstName}
-        </h3>
+        <p>Number of transactions</p>
+        <h3>Nill</h3>
       </div>
       <div className="phone-no">
-        <p>phone number</p>
-        <h3>{gurantor?.guarantor?.phoneNumber.slice(0, 13)}</h3>
+        <p>Alternative address</p>
+        <h3>Nil</h3>
       </div>
       <div className="email">
-        <p> address</p>
-        <h3>{gurantor?.guarantor?.address}</h3>
+        <p> Alternative phone</p>
+        <h3>Nill</h3>
       </div>
     </div>
   );

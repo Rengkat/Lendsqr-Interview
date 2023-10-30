@@ -26,16 +26,20 @@ $secondary: #213f7d;
   padding: 2rem;
   .top-charts {
     background-color: #fff;
+    margin-top: 7rem;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     @include mobile() {
       flex-direction: column;
+      margin-top: 2rem;
     }
     @include tablet() {
       flex-direction: column;
+      margin-top: 2rem;
     }
     @include laptop() {
       flex-direction: row;
+      margin-top: 2rem;
     }
     .bar-chart {
       font-size: 2rem;

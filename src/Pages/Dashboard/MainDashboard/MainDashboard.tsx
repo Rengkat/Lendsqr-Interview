@@ -6,6 +6,7 @@ import SpiderChart from "./SpiderChart";
 import Spread from "./Spread";
 import { useGetUsersQuery } from "../../../Redux/Api/UserApi";
 import "./Style.scss";
+import UserTable from "../../../Components/UserTable/UserTable";
 const MainDashboard = () => {
   const { data, isFetching } = useGetUsersQuery(undefined);
   const tenCustomer = data?.slice(0, 10);
@@ -14,6 +15,7 @@ const MainDashboard = () => {
     <div className="containerDash">
       <UserSummary />
       <div className="top-charts">
+        {/* <Barchat /> */}
         <Spread />
         <div className="bar-chart">
           <div
@@ -24,11 +26,8 @@ const MainDashboard = () => {
           </div>
         </div>
       </div>
-      <div className="pieCharts">
-        {/* <PieCharts />
 
-        <SpiderChart /> */}
-      </div>
+      <UserTable />
     </div>
   );
 };

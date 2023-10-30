@@ -1,5 +1,4 @@
-export { default as AppAndSystem } from "./AppAndSystem/AppAndSystem";
-export { default as Document } from "./Documents/Documents";
-export { default as BankDetails } from "./BankDetail/BankDetails";
-export { default as Saving } from "./Savings/Savings";
+export { default as UserCart } from "./UserCart/UserCart";
+export { default as UserOrders } from "./UserOrders/UserOrders";
+export { default as UserWishlist } from "./UserWishlist/UserWishlist";
 export { default as GenteralDetails } from "./GeneralDetails/GenteralDetails";

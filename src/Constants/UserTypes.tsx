@@ -104,3 +104,62 @@ export interface Education {
   monthlyIncome: string[];
   loanRepayment: string;
 }
+
+export const tableHead = ["first name", "last name", "phone", "address", "email", "status"];
+
+export const stylists = [
+  {
+    orgName: "alex fashion",
+    firstName: "Darian",
+    lastName: "Rolfson",
+    phoneNumber: "4942780946",
+    status: "active",
+    address: "Gusikowski Locks",
+    email: "alex@gmail.com",
+  },
+  {
+    orgName: "nanmet stiches",
+    firstName: "Mia",
+    lastName: "Padberg",
+    phoneNumber: "91234556786",
+    status: "active",
+    address: "Meagan Islands",
+    email: "emma@gmail.com",
+  },
+  {
+    orgName: "jenifer fashion",
+    firstName: "Alfonso",
+    lastName: "Feil",
+    phoneNumber: "08056445443",
+    status: "pending",
+    address: "Mraz Fields",
+    email: "john@gmail.com",
+  },
+  {
+    orgName: "vivian style",
+    firstName: "Nolan",
+    lastName: "Berge",
+    phoneNumber: "090443356",
+    status: "active",
+    address: "Asha Isle",
+    email: "israel@gmail.com",
+  },
+  {
+    orgName: "abosh fashion",
+    firstName: "Faye",
+    lastName: "Ward",
+    phoneNumber: "08060494932",
+    status: "cancel",
+    address: "Larson Inlet",
+    email: "jeni@gmail.com",
+  },
+  {
+    orgName: "Wagnar fashion",
+    firstName: "Raymond",
+    lastName: "Prosacco",
+    phoneNumber: "070345678432",
+    status: "cancel",
+    address: "Colt Lock",
+    email: "happy@gmail.com",
+  },
+];

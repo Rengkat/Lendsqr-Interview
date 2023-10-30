@@ -8,7 +8,7 @@ const SharedLayout = () => {
   const { isSideBarOpen } = useSelector((store: any) => store.user);
   const dispatch = useDispatch();
   return (
-    <div className="container">
+    <div className="main-container">
       <div className="contain">
         <nav>
           <Nav />

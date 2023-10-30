@@ -1,13 +1,11 @@
 import "./style.scss";
 import brandName from "../../assets/lendsqr.png";
 import logo from "../../assets/Union.png";
-import {
-  BsSearch,
-  MdArrowDropDown,
-  ImMenu,
-  IoMdNotificationsOutline,
-  FaUserCircle,
-} from "react-icons/all";
+import { MdArrowDropDown } from "react-icons/md";
+import { BsSearch } from "react-icons/bs";
+import { FaUserCircle } from "react-icons/fa";
+import { ImMenu } from "react-icons/im";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import { useState } from "react";
 import { removeUserFromLocalStorage } from "../../Redux/Features/localStorage";
 import { useDispatch, useSelector } from "react-redux";

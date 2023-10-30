@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./style.scss";
-import { FaHome } from "react-icons/all";
+import { FaHome } from "react-icons/fa";
 import { navLinksCustomers } from "../../Constants/constants";
 import brandName from "../../assets/lendsqr.png";
 import logo from "../../assets/Union.png";

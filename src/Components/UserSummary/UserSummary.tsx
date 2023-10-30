@@ -4,7 +4,7 @@ import "./stylle.scss";
 const UserSummary = () => {
   return (
     <div className="User-container">
-      <h1>Users</h1>
+      <h1>Summary</h1>
 
       <div className="flex">
         {userInfo.map((detail) => {

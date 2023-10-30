@@ -1,6 +1,5 @@
 import "./style.scss";
 import { IndividualType } from "../../../../Constants/constants";
-
 interface DetailsProps {
   profile: IndividualType;
 }
@@ -10,38 +9,31 @@ const DetailsComponent = ({ profile }: DetailsProps) => {
       <div className="full-name">
         <p>Full Name</p>
         <h3>
+          Alexander Rengkat
           {profile?.profile?.lastName} {profile?.profile?.firstName}
         </h3>
       </div>
       <div className="phone-no">
         <p>Phone number</p>
-        <h3>{profile?.profile?.phoneNumber}</h3>
+        <h3>080868486879{profile?.profile?.phoneNumber}</h3>
       </div>
       <div className="email">
         <p>Email address</p>
-        <h3>{profile?.email}</h3>
+        <h3>rengkat@gmail.com{profile?.email}</h3>
       </div>
 
       <div className="bvn">
-        <p>bvn</p>
-        <h3>{profile?.profile?.bvn}</h3>
+        <p>User ID</p>
+        <h3>#12345678234{profile?.profile?.bvn}</h3>
       </div>
-      <div className="gender">
-        <p>gender</p>
-        <h3>{profile?.profile?.gender}</h3>
+      <div className="address">
+        <p>Delivery Address</p>
+        <h3>16,Jos Nigeria{profile?.profile?.bvn}</h3>
       </div>
-      {/* <div className="marital-status">
-        <p>marital status</p>
-        <h3>{profile?.}</h3>
+      <div className="join">
+        <p>Joint</p>
+        <h3>16 December, 2023{profile?.profile?.bvn}</h3>
       </div>
-      <div className="children">
-        <p>children</p>
-        <h3>{profile.children}</h3>
-      </div>
-      <div className="residence">
-        <p>types of residence</p>
-        <h3>{profile.address}</h3>
-      </div> */}
     </div>
   );
 };

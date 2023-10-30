@@ -59,13 +59,14 @@ interface BarDataType {
 const Barchat = () => {
   return (
     <>
-      <div>
+      <div style={{ width: "50%" }}>
         <BarChart
           style={{
             background: "white",
             borderRadius: "10px",
+            width: "95%",
           }}
-          width={800}
+          width={300}
           height={300}
           data={data}
           margin={{
@@ -83,9 +84,6 @@ const Barchat = () => {
           <Bar yAxisId="left" dataKey="pv" fill="#8884d8" />
           <Bar yAxisId="right" dataKey="uv" fill="#82ca9d" />
         </BarChart>
-        <div className="bar-chart">
-          <h1>SALES</h1>
-        </div>
       </div>
     </>
   );

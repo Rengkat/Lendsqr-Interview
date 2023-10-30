@@ -1,36 +1,50 @@
+@mixin mobile {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin large {
+  @media only screen and (min-width: 1441px) {
+    @content;
+  }
+}
 .userContainer {
-  padding: 2rem;
-  .table-nav {
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 6rem 5rem;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    color: #545f7d;
-    .select-page-num {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      .select {
-        border-radius: 5px;
-        padding: 4px 7px;
-        background: rgba(33, 63, 125, 0.1);
-      }
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  .bar-chart {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    overflow-x: hidden;
+    margin-left: -0.5rem;
+    @include laptop() {
+      margin-left: 0rem;
     }
-    .pagination {
+    @include large() {
+      margin-left: 0rem;
+    }
+    .charts {
       display: flex;
-      align-items: center;
-      gap: 10px;
-      .bf-btn,
-      .nxt-btn {
-        width: 2rem;
-        height: 2rem;
-        border: 1px solid grey;
-        padding: 5px;
-        cursor: pointer;
-        border-radius: 5px;
-        background: rgba(33, 63, 125, 0.1);
+      flex-direction: column;
+      // align-items: center;
+      // @include tablet() {
+      //   flex-direction: row;
+      // }
+      @include laptop() {
+        flex-direction: row;
+      }
+      @include large() {
+        flex-direction: row;
       }
     }
   }

@@ -1,8 +1,8 @@
 import "./style.scss";
 import { Outlet, useParams } from "react-router-dom";
-import { HiArrowLongLeft } from "react-icons/all";
+import { HiArrowLongLeft } from "react-icons/hi2";
 import { Link, NavLink } from "react-router-dom";
-import { AiOutlineUser } from "react-icons/all";
+import { AiOutlineUser } from "react-icons/ai";
 import { useGetUserDetailQuery } from "../../../Redux/Api/UserApi";
 import { IndividualType } from "../../../Constants/constants";
 import { useDispatch } from "react-redux";
@@ -20,7 +20,7 @@ const UserDetailLayOut = () => {
   };
   return (
     <div className="detail-container">
-      <Link to="/user" className="arrow">
+      <Link to="/users" className="arrow">
         <HiArrowLongLeft fontSize={30} /> <p>Back to User</p>
       </Link>
       <div className="sub">
@@ -35,52 +35,40 @@ const UserDetailLayOut = () => {
       <div className="details-heading">
         <div className="detail-profile">
           <div className="left">
-            {/* <div className="image"> */}
-            <img className="image" src={data?.profile.avatar} alt="image" />
-            {/* <AiOutlineUser fontSize={50} /> */}
-            {/* </div> */}
+            <div className="image">
+              {/* <img className="image" src={data?.profile.avatar} alt="image" /> */}
+              <AiOutlineUser fontSize={30} />
+            </div>
             <div className="name">
               <h1>
+                Alexander Rengkat
                 {data?.profile.lastName} {data?.profile.firstName}
               </h1>
-              <p>{data?.profile.address}</p>
+              <p>12, Jos, Plateau state{data?.profile.address}</p>
+              <p>#234567563</p>
             </div>
-          </div>
-          <div className="user-tier">
-            <p>User's Tier</p>
-            <p>stars</p>
-          </div>
-          <div className="account">
-            <h1>
-              {data?.profile.currency}
-              {data?.accountBalance}
-            </h1>
-            <p>{data?.accountNumber} / Frst bank</p>
           </div>
         </div>
         <div className="links">
           <NavLink className="link" to="generalDetails">
-            General Details
+            User Details
           </NavLink>
 
-          <NavLink className="link" to="document">
-            Documents
+          <NavLink className="link" to="orders">
+            Orders
           </NavLink>
 
-          <NavLink className="link" to="bankDetails">
-            Bank Details
+          <NavLink className="link" to="cart">
+            Cart Products
           </NavLink>
 
-          <NavLink className="link" to="saving">
-            Savings
-          </NavLink>
-          <NavLink className="link" to="appAndSystem">
-            App and System
+          <NavLink className="link" to="wishlist">
+            wishlist
           </NavLink>
         </div>
       </div>
       <div className="main-detail">
-        <div className="container">
+        <div className="containerUserDetail">
           <Outlet context={{ data }} />
         </div>
       </div>

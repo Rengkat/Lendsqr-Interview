@@ -90,7 +90,7 @@ const data = [
 const Spread = () => {
   return (
     // <div style={{ width: "100%" }}>
-    <div style={{ width: "95%", height: 400, padding: "2PZ" }}>
+    <div style={{ width: "100%", height: 400, padding: "2PZ" }}>
       <ResponsiveContainer>
         <ComposedChart
           width={500}

@@ -9,15 +9,19 @@ const Social = ({ socials }: SocialsProps) => {
     <div className="top-grid-education">
       <div className="full-name">
         <p>Twitter</p>
-        <h3>{socials?.socials?.twitter}</h3>
+        <h3>{socials?.socials?.twitter ? socials?.socials?.twitter : "Nill"}</h3>
       </div>
       <div className="phone-no">
         <p>facebook</p>
-        <h3>{socials?.socials?.facebook}</h3>
+        <h3>{socials?.socials?.facebook ? socials?.socials?.facebook : "Nill"}</h3>
       </div>
       <div className="email">
         <p>instagram</p>
-        <h3>{socials?.socials?.instagram}</h3>
+        <h3>{socials?.socials?.instagram ? socials?.socials?.instagram : "Nill"}</h3>
+      </div>
+      <div className="email">
+        <p>whatApp</p>
+        <h3>{socials?.socials?.instagram ? socials?.socials?.instagram : "Nill"}</h3>
       </div>
     </div>
   );
