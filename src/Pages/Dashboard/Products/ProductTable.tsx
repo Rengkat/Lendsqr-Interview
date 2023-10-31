@@ -45,7 +45,7 @@ const ProductsTable = ({ data, tableHead }: TableProps) => {
             {data.slice(0, seeMore).map((product: Product, i) => {
               return (
                 <Fragment key={product.id}>
-                  <Link to={"/users/1"} className="row">
+                  <aside className="row">
                     <p style={{ paddingLeft: "1rem" }}>{i + 1}</p>
                     <p style={{ textTransform: "capitalize" }}>{product.name}</p>
                     <p>#{product.id.toUpperCase().slice(0, 7)}</p>
@@ -56,7 +56,7 @@ const ProductsTable = ({ data, tableHead }: TableProps) => {
                         {product.inStock ? "Yes" : "No!"}
                       </span>
                     </p>
-                  </Link>
+                  </aside>
                 </Fragment>
               );
             })}

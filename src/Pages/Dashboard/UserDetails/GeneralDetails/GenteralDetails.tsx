@@ -5,23 +5,18 @@ import EducationDetail from "../Components/EducationDetail";
 import Social from "../Components/Social";
 import Gurantor from "../Components/Gurantor";
 import { useOutletContext } from "react-router-dom";
-import { IndividualType } from "../../../../Constants/constants";
-interface dataType {
-  data: IndividualType;
-}
-const GenteralDetails = () => {
-  const { data }: dataType = useOutletContext();
 
+const GenteralDetails = () => {
   return (
     <div>
       <div className="personal-information">
         <h2 className="heading">Personal Information</h2>
-        <DetailsComponent profile={data} />
+        <DetailsComponent />
 
         <h2 className="heading">Socials</h2>
-        <Social socials={data} />
+        <Social />
         <h2 className="heading">Others</h2>
-        <Gurantor gurantor={data} />
+        <Gurantor />
       </div>
     </div>
   );

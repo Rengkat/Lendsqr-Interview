@@ -1,38 +1,32 @@
 import "./style.scss";
-import { IndividualType } from "../../../../Constants/constants";
-interface DetailsProps {
-  profile: IndividualType;
-}
-const DetailsComponent = ({ profile }: DetailsProps) => {
+
+const DetailsComponent = () => {
   return (
     <div className="top-grid">
       <div className="full-name">
         <p>Full Name</p>
-        <h3>
-          Alexander Rengkat
-          {profile?.profile?.lastName} {profile?.profile?.firstName}
-        </h3>
+        <h3>Alexander Rengkat</h3>
       </div>
       <div className="phone-no">
         <p>Phone number</p>
-        <h3>080868486879{profile?.profile?.phoneNumber}</h3>
+        <h3>080868486879</h3>
       </div>
       <div className="email">
         <p>Email address</p>
-        <h3>rengkat@gmail.com{profile?.email}</h3>
+        <h3>rengkat@gmail.com</h3>
       </div>
 
       <div className="bvn">
         <p>User ID</p>
-        <h3>#12345678234{profile?.profile?.bvn}</h3>
+        <h3>#12345678234</h3>
       </div>
       <div className="address">
         <p>Delivery Address</p>
-        <h3>16,Jos Nigeria{profile?.profile?.bvn}</h3>
+        <h3>16,Jos Nigeria</h3>
       </div>
       <div className="join">
         <p>Joint</p>
-        <h3>16 December, 2023{profile?.profile?.bvn}</h3>
+        <h3>16 December, 2023</h3>
       </div>
     </div>
   );

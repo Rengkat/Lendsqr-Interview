@@ -4,7 +4,6 @@ import { HiArrowLongLeft } from "react-icons/hi2";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
 import { useGetUserDetailQuery } from "../../../Redux/Api/UserApi";
-import { IndividualType } from "../../../Constants/constants";
 import { useDispatch } from "react-redux";
 import { updateStatus } from "../../../Redux/Features/LoginSlice";
 

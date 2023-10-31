@@ -84,6 +84,7 @@
           font-size: 0.5rem;
           gap: 1rem;
           border-bottom: 0.5px solid #efeeee;
+          cursor: pointer;
 
           @include laptop() {
             font-size: 0.9rem;

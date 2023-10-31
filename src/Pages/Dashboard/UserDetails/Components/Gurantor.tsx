@@ -1,8 +1,4 @@
-import { IndividualType } from "../../../../Constants/constants";
-type GurantorProp = {
-  gurantor: IndividualType;
-};
-const Gurantor = ({ gurantor }: GurantorProp) => {
+const Gurantor = () => {
   return (
     <div className="top-grid-education">
       <div className="full-name">

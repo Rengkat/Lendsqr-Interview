@@ -45,7 +45,7 @@ const OrderTable = ({ data, tableHead }: TableProps) => {
             {data.slice(0, seeMore).map((product: Product, i) => {
               return (
                 <Fragment key={product.id}>
-                  <Link to={"/users/1"} className="row">
+                  <aside className="row">
                     <p style={{ paddingLeft: "1rem" }}>{i + 1}</p>
                     <p>{product.name}</p>
                     <p>#{product.id.toUpperCase()}</p>
@@ -63,35 +63,10 @@ const OrderTable = ({ data, tableHead }: TableProps) => {
                         {product.status}
                       </span>
                     </p>
-                  </Link>
+                  </aside>
                 </Fragment>
               );
             })}
-            {/* {data.slice(0, seeMore).map(product) => {
-              return (
-                <Fragment key={product.id}>
-                  <Link to={"/users/1"} className="row">
-                    <p style={{ paddingLeft: "1rem" }}>{i + 1}</p>
-                    <p>{product.firstName}</p>
-                    <p>{product.phoneNumber}</p>
-                    <p>{product.address}</p>
-                    <p>{product.email}</p>
-                    <p>
-                      <span
-                        className={
-                          product.status === "active"
-                            ? "active"
-                            : user.status === "pending"
-                            ? "pending"
-                            : "cancel"
-                        }>
-                        {product.status}
-                      </span>
-                    </p>
-                  </Link>
-                </Fragment>
-              );
-            })} */}
           </div>
           <div className="btn">
             {seeMore === 5 ? (

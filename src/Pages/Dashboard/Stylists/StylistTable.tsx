@@ -36,7 +36,7 @@ const StylistsTable = () => {
           {stylists.slice(0, seeMore).map((stylist, i) => {
             return (
               <Fragment key={stylist.company}>
-                <Link to={"/"} className="row">
+                <Link to={"/stylist/1"} className="row">
                   <p style={{ paddingLeft: "1rem" }}>{i + 1}</p>
                   <p style={{ textTransform: "capitalize" }}>{stylist.company}</p>
                   <p>{stylist.phoneNumber}</p>
