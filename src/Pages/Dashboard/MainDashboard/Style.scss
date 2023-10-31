@@ -24,6 +24,9 @@ $secondary: #213f7d;
   width: 100%;
   box-sizing: border-box;
   padding: 2rem;
+  @include mobile() {
+    padding: 0.5rem;
+  }
   .top-charts {
     background-color: #fff;
     margin-top: 7rem;

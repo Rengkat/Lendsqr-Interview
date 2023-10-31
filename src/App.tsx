@@ -13,7 +13,6 @@ import {
   Orders,
   Stylists,
   Products,
-  CancelOrders,
 } from "./Pages/Index";
 import {
   GenteralDetails,
@@ -37,7 +36,7 @@ function App() {
           }>
           <Route index element={<MainDashboard />} />
           <Route path="dashboard" element={<MainDashboard />} />
-          <Route path="users" element={<User />} />
+          <Route path="customers" element={<User />} />
           <Route path="stylist" element={<Stylists />} />
           <Route path="users/:userId" element={<UserDetailLayOut />}>
             <Route index element={<GenteralDetails />} />
@@ -48,7 +47,6 @@ function App() {
           </Route>
           <Route path="orders" element={<Orders />} />
           <Route path="products" element={<Products />} />
-          <Route path="cancel" element={<CancelOrders />} />
 
           {/* </ProtectedRoute> */}
         </Route>

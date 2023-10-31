@@ -31,6 +31,8 @@
     gap: 1rem;
     @include mobile() {
       grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin-left: -0.3rem;
     }
     @include tablet() {
       grid-template-columns: repeat(2, 1fr);

@@ -8,6 +8,8 @@ import { addToUsers } from "../../../Redux/Features/LoginSlice";
 
 import Barchat from "../MainDashboard/Barchat";
 import PieCharts from "../MainDashboard/PieChart";
+import LongGraph from "../MainDashboard/LongGraph";
+import { customerData } from "../../../Constants/constants";
 
 const User = () => {
   const { data, isFetching } = useGetUsersQuery(undefined);
@@ -27,10 +29,9 @@ const User = () => {
       <UserSummary />
 
       <div className="bar-chart">
-        <h1>Users signed</h1>
+        <h2 style={{ paddingBottom: "1rem" }}>Sign up and Deleted customers</h2>
         <div className="charts">
-          <Barchat />
-          <PieCharts />
+          <LongGraph signUpcolor="#8884d8" leftColor="#413ea0" data={customerData} />
         </div>
       </div>
       <UserTable />

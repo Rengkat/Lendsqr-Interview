@@ -15,77 +15,48 @@ import {
 const data = [
   {
     name: "January",
-    uv: 590,
-    pv: 800,
-    amt: 1400,
+    mnw: 590,
+    wnw: 800,
+    mcw: 1400,
+    wcw: 300,
   },
   {
     name: "February",
-    uv: 868,
-    pv: 967,
+    mnw: 868,
+    wnw: 967,
     amt: 1506,
+    wcw: 900,
   },
   {
     name: "March",
-    uv: 1397,
-    pv: 1098,
-    amt: 989,
+    mnw: 1397,
+    wnw: 1098,
+    mcw: 989,
+    wcw: 1200,
   },
   {
     name: "April",
-    uv: 1480,
-    pv: 1200,
-    amt: 128,
+    mnw: 1397,
+    wnw: 1098,
+    mcw: 989,
+    wcw: 1200,
   },
   {
     name: "May",
-    uv: 1520,
-    pv: 1108,
-    amt: 100,
+    mnw: 1397,
+    wnw: 888,
+    mcw: 989,
+    wcw: 190,
   },
   {
     name: "Jun",
-    uv: 1400,
-    pv: 680,
-    amt: 1700,
-  },
-  {
-    name: "Jul",
-    uv: 1397,
-    pv: 1098,
-    amt: 989,
-  },
-  {
-    name: "Aug",
-    uv: 1400,
-    pv: 680,
-    amt: 1700,
-  },
-  {
-    name: "Sept",
-    uv: 590,
-    pv: 800,
-    amt: 1400,
-  },
-  {
-    name: "Oct",
-    uv: 1400,
-    pv: 7080,
-    amt: 3800,
-  },
-  {
-    name: "Nov",
-    uv: 1700,
-    pv: 6800,
-    amt: 2700,
-  },
-  {
-    name: "Dec",
-    uv: 1400,
-    pv: 780,
-    amt: 1700,
+    mnw: 1397,
+    wnw: 1398,
+    mcw: 989,
+    wcw: 100,
   },
 ];
+// #13e908
 
 const Spread = () => {
   return (
@@ -107,9 +78,10 @@ const Spread = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
-          <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-          <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+          <Area type="monotone" dataKey="mnw" fill="#8884d8" stroke="#8884d8" />
+          <Bar dataKey="wnw" barSize={20} fill="#413ea0" />
+          <Bar dataKey="wcw" barSize={20} fill="#0810ff" />
+          <Line type="monotone" dataKey="wcw" stroke="#ff1408" />
         </ComposedChart>
       </ResponsiveContainer>
     </div>

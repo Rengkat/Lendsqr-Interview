@@ -3,7 +3,6 @@ export { default as UserDetailLayOut } from "./Dashboard/UserDetails/UserDetail"
 export { default as SharedLayout } from "../Pages/Dashboard/Dashboard";
 export { default as Orders } from "./Dashboard/DecisionModels/Orders";
 export { default as Stylists } from "./Dashboard/Stylists/Stylists";
-export { default as CancelOrders } from "./Dashboard/CancelOrders/CancelOrders";
 export { default as LoginPage } from "../Pages/Login/LoginPage";
 export { default as Organization } from "./Dashboard/Organization/Organization";
 export { default as Products } from "./Dashboard/Products/Products";

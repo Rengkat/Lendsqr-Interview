@@ -1,22 +1,26 @@
 import { useState, Fragment } from "react";
-import Form from "../Form/Form";
-import SelectBtn from "../SelectBtn/SelectBtn";
 import { Link, useNavigate } from "react-router-dom";
-import { UserTableDataType, customers, tableHead } from "../../Constants/UserTypes";
+// import { UserTableDataType, customers, tableHead } from "../../Constants/UserTypes";
 import "./style.scss";
 //
-
+interface Product {
+  id: string;
+  name: string;
+  price: string;
+  quantity: number;
+  inStock: boolean;
+}
 interface TableProps {
-  data: UserTableDataType | undefined;
-  isFetching: any;
+  data: Product[];
+  tableHead: string[];
 }
 
-const UserTable = () => {
+const ProductsTable = ({ data, tableHead }: TableProps) => {
   const [seeMore, setSeeMore] = useState(5);
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
   const handleReadMore = () => {
-    setSeeMore(customers.length);
+    setSeeMore(data.length);
   };
   const handleSeeLess = () => {
     setSeeMore(5);
@@ -26,7 +30,7 @@ const UserTable = () => {
       <div>
         <div className="stylist-table">
           <div className="cation">
-            <h2 style={{ padding: ".5rem 0" }}>List of Customers</h2>
+            <h2 style={{ padding: ".5rem 0" }}>List of Products</h2>
           </div>
           <div className="head">
             {tableHead.map((title) => {
@@ -38,25 +42,18 @@ const UserTable = () => {
             })}
           </div>
           <div className="table-body-style">
-            {customers.slice(0, seeMore).map((user, i) => {
+            {data.slice(0, seeMore).map((product: Product, i) => {
               return (
-                <Fragment key={user.phoneNumber}>
+                <Fragment key={product.id}>
                   <Link to={"/users/1"} className="row">
                     <p style={{ paddingLeft: "1rem" }}>{i + 1}</p>
-                    <p>{user.firstName}</p>
-                    <p>{user.phoneNumber}</p>
-                    <p>{user.address}</p>
-                    <p>{user.email}</p>
+                    <p style={{ textTransform: "capitalize" }}>{product.name}</p>
+                    <p>#{product.id.toUpperCase().slice(0, 7)}</p>
+                    <p>{product.price}</p>
+                    <p>{product.quantity}</p>
                     <p>
-                      <span
-                        className={
-                          user.status === "active"
-                            ? "active"
-                            : user.status === "pending"
-                            ? "pending"
-                            : "cancel"
-                        }>
-                        {user.status}
+                      <span className={product.inStock ? "active" : "cancel"}>
+                        {product.inStock ? "Yes" : "No!"}
                       </span>
                     </p>
                   </Link>
@@ -77,4 +74,4 @@ const UserTable = () => {
   );
 };
 
-export default UserTable;
+export default ProductsTable;

@@ -54,9 +54,19 @@ const data = [
     amt: 2100,
   },
 ];
+interface Data {
+  month: string;
+  signUp: number;
+  deleted: number;
+}
+interface Props {
+  signUpcolor: string;
+  leftColor: string;
+  data: Data[];
+}
 import React from "react";
 
-const LongGraph = () => {
+const LongGraph = ({ signUpcolor, leftColor, data }: Props) => {
   return (
     <div style={{ width: "95%", height: 300 }}>
       <ResponsiveContainer>
@@ -69,10 +79,11 @@ const LongGraph = () => {
             bottom: 0,
           }}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="month" />
           <YAxis />
           <Tooltip />
-          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+          <Area type="monotone" dataKey="signUp" stroke={signUpcolor} fill={signUpcolor} />
+          <Area type="monotone" dataKey="deleted" stroke={leftColor} fill={leftColor} />
         </AreaChart>
       </ResponsiveContainer>
     </div>

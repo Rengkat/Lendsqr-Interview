@@ -9,8 +9,8 @@ type NavLinksType = {
 };
 export const navLinksCustomers: NavLinksType[] = [
   {
-    name: "Users",
-    link: "users",
+    name: "Customers",
+    link: "customers",
     icon: <FaUserFriends />,
   },
   {
@@ -27,12 +27,6 @@ export const navLinksCustomers: NavLinksType[] = [
     name: "Products",
     link: "products",
     icon: <FaPiggyBank />,
-  },
-
-  {
-    name: "Cancel Orders",
-    link: "cancel",
-    icon: <FaUserTimes />,
   },
 ];
 
@@ -63,53 +57,105 @@ export const userInfo: UserInfor[] = [
     numbers: "102,456",
   },
 ];
-export interface IndividualType {
-  createdAt: string;
-  orgName: string;
-  userName: string;
-  email: string;
-  phoneNumber: string;
-  lastActiveDate: string;
-  profile: Profile;
-  guarantor: Guarantor;
-  accountBalance: string;
-  accountNumber: string;
-  socials: Socials;
-  education: Education;
-  id: string;
-}
-
-export interface Profile {
-  firstName: string;
-  lastName: string;
-  phoneNumber: string;
-  avatar: string;
-  gender: string;
-  bvn: string;
-  address: string;
-  currency: string;
-}
-
-export interface Guarantor {
-  firstName: string;
-  lastName: string;
-  phoneNumber: string;
-  gender: string;
-  address: string;
-}
-
-export interface Socials {
-  facebook: string;
-  instagram: string;
-  twitter: string;
-}
-
-export interface Education {
-  level: string;
-  employmentStatus: string;
-  sector: string;
-  duration: string;
-  officeEmail: string;
-  monthlyIncome: string[];
-  loanRepayment: string;
-}
+export const customerData = [
+  {
+    month: "Jan",
+    signUp: 300,
+    deleted: 20,
+  },
+  {
+    month: "Feb",
+    signUp: 30,
+    deleted: 3,
+  },
+  {
+    month: "March",
+    signUp: 45,
+    deleted: 2,
+  },
+  {
+    month: "April",
+    signUp: 30,
+    deleted: 10,
+  },
+  {
+    month: "May",
+    signUp: 99,
+    deleted: 0,
+  },
+  {
+    month: "Jun",
+    signUp: 201,
+    deleted: 7,
+  },
+];
+export const StylistData = [
+  {
+    month: "Jan",
+    signUp: 10,
+    deleted: 2,
+  },
+  {
+    month: "Feb",
+    signUp: 30,
+    deleted: 0,
+  },
+  {
+    month: "March",
+    signUp: 49,
+    deleted: 2,
+  },
+  {
+    month: "April",
+    signUp: 25,
+    deleted: 9,
+  },
+  {
+    month: "May",
+    signUp: 190,
+    deleted: 5,
+  },
+  {
+    month: "Jun",
+    signUp: 201,
+    deleted: 7,
+  },
+];
+export const sales = [
+  {
+    name: "January",
+    canceled: 40,
+    delivered: 1400,
+    pending: 10,
+  },
+  {
+    name: "February",
+    canceled: 90,
+    delivered: 9900,
+    pending: 100,
+  },
+  {
+    name: "March",
+    canceled: 0,
+    delivered: 1800,
+    pending: 10,
+  },
+  {
+    name: "April",
+    canceled: 5,
+    delivered: 1200,
+    pending: 2,
+  },
+  {
+    name: "May",
+    canceled: 8,
+    delivered: 900,
+    pending: 21,
+  },
+  {
+    name: "Jun",
+    canceled: 51,
+    delivered: 800,
+    pending: 14,
+  },
+];

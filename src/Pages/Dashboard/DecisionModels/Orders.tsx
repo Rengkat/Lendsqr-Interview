@@ -1,17 +1,16 @@
-import React from "react";
-import UserTable from "../../../Components/UserTable/UserTable";
-import PieCharts from "../MainDashboard/PieChart";
 import "./style.scss";
-import LongGraph from "../MainDashboard/LongGraph";
+import OrderTable from "./OrdersTable";
+import { orderProducts, orderTableHead } from "../../../Constants/UserTypes";
+import OrderChart from "./OrdersChart";
 const Orders = () => {
   return (
     <div className="orderContainer">
       {/* <ColorPiechart /> */}
       <div className="chrt">
         <h1>Orders</h1>
-        <LongGraph />
+        <OrderChart />
       </div>
-      <UserTable />
+      <OrderTable data={orderProducts} tableHead={orderTableHead} />
     </div>
   );
 };
