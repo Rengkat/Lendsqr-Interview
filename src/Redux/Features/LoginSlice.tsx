@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addUserToLocalStorage, getUserFromLocalStorage } from "./localStorage";
 import { Root2 } from "../../Constants/UserTypes";
-import { useGetUsersQuery } from "../Api/UserApi";
 
 interface InitialStateType {
   userLogin: { email: string; password: string };
@@ -37,4 +36,5 @@ const loginSlice = createSlice({
   },
 });
 export default loginSlice.reducer;
-export const { updateUser, addToUsers, updateStatus, openSideBar } = loginSlice.actions;
+export const { updateUser, addToUsers, updateStatus, openSideBar } =
+  loginSlice.actions;

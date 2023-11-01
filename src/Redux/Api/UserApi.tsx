@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { UserTypeRoot } from "../../Constants/UserTypes";
-import { IndividualType } from "../../Constants/constants";
+
 interface status {
   status: string;
 }
@@ -11,7 +11,7 @@ export const userApi = createApi({
   }),
   endpoints: (builder) => ({
     getUsers: builder.query<UserTypeRoot, undefined>({ query: () => "/users" }),
-    getUserDetail: builder.query<IndividualType, undefined>({
+    getUserDetail: builder.query<any, undefined>({
       query: (userId: string | undefined) => `/users/${userId}`,
     }),
   }),

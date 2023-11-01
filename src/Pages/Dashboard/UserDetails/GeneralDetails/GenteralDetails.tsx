@@ -1,10 +1,7 @@
 import "./style.scss";
-import { useEffect, useState } from "react";
 import DetailsComponent from "../Components/DetailsComponent";
-import EducationDetail from "../Components/EducationDetail";
 import Social from "../Components/Social";
 import Gurantor from "../Components/Gurantor";
-import { useOutletContext } from "react-router-dom";
 
 const GenteralDetails = () => {
   return (
